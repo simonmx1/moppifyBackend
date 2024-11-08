@@ -1,0 +1,22 @@
+[
+  {"name": "Alice", "position": "janitor", "rfid": "a3 c8 a1 c2"},
+  {"name": "Bob", "position": "janitor", "rfid": "4d 9e 8a 7b"},
+  {"name": "Charlie", "position": "janitor", "rfid": "b7 2e 4b 61"},
+  {"name": "David", "position": "janitor", "rfid": "1f 5e cb d1"},
+  {"name": "Eve", "position": "janitor", "rfid": "60 b3 f3 b9"},
+  {"name": "Frank", "position": "janitor", "rfid": "5d 03 f4 a5"},
+  {"name": "Grace", "position": "janitor", "rfid": "d6 2f bc 87"},
+  {"name": "Hank", "position": "janitor", "rfid": "74 27 c6 b8"},
+  {"name": "Ivy", "position": "janitor", "rfid": "7f 1e 60 9b"},
+  {"name": "Jack", "position": "janitor", "rfid": "21 f1 fd a4"},
+  {"name": "Karen", "position": "janitor", "rfid": "ab e0 a5 61"},
+  {"name": "Leo", "position": "janitor", "rfid": "9a 57 cf 71"},
+  {"name": "Mona", "position": "janitor", "rfid": "be 6d 18 b3"},
+  {"name": "Nate", "position": "janitor", "rfid": "b0 a1 1a 8d"},
+  {"name": "Olivia", "position": "janitor", "rfid": "08 07 4e 7f"},
+  {"name": "Paul", "position": "janitor", "rfid": "69 f8 e5 7b"},
+  {"name": "Quincy", "position": "mike", "rfid": "eb 4e 2b 72"},
+  {"name": "Rachel", "position": "mike", "rfid": "a4 47 7e 50"},
+  {"name": "Steve", "position": "mike", "rfid": "b5 66 0b 60"},
+  {"name": "Tina", "position": "mike", "rfid": "28 7e 77 81"}
+]
