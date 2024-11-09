@@ -1,5 +1,6 @@
 import json
 import os
+import time
 
 from flask import Flask, jsonify, request, Response
 from tinydb import TinyDB, Query
@@ -9,6 +10,7 @@ app = Flask(__name__)
 db = TinyDB('database.json')
 carts_table = db.table('carts')
 employees_table = db.table('employees')
+lost_mops_table = db.table('lost_mops')
 
 active_sessions = {}
 
@@ -25,12 +27,39 @@ def api_response(message: str, code: int, body: dict = {}) -> tuple[Response, in
 @app.route('/employees', methods=['GET'])
 def get_employees():
     employees = employees_table.all()
-    return jsonify({"employees": employees})
+    return jsonify({"employees": employees}), 200
 
 @app.route('/carts', methods=['GET'])
 def get_carts():
     carts = carts_table.all()
     return jsonify({"carts": carts}), 200
+
+@app.route('/sensor', methods=['POST'])
+def handle_sensor():
+    data = request.get_json()
+    cart_uuid = data.get("cart")
+    _ = data.get("action")
+    cart = carts_table.get(Query().uuid == str(cart_uuid))
+    if not cart:
+        return api_response("Cart not found", 404)
+
+    assigned_to = cart.get("assigned_to", None)
+
+    if assigned_to is None:
+        return api_response(f"Cart {cart_uuid} is not in use", 403)
+
+    employee = employees_table.get(Query().rfid == assigned_to)
+
+    if employee['position'] != 'janitor':
+        return api_response("Employee is not a janitor", 403)
+
+    dirty_cloths = cart['dirty_cloths'] + 1
+    carts_table.update({"dirty_cloths": dirty_cloths}, Query().uuid == cart_uuid)
+
+    print(f"There are now {dirty_cloths} dirty cloths/mops in the cart {cart_uuid}")
+
+    return api_response(f"{employee['name']} {employee['surname']} has placed 1 item in the dirty bin of cart {cart_uuid}", 200)
+
 
 @app.route('/authenticate', methods=['POST'])
 def handle_authenticate():
@@ -57,7 +86,7 @@ def handle_authenticate():
             return api_response("Cart not found", 404)
 
         if cart.get("assigned_to") is None:
-            carts_table.update({"assigned_to": rfid}, Query().rfid == cart_uuid)
+            carts_table.update({"assigned_to": rfid}, Query().uuid == cart_uuid)
             active_sessions[rfid] = {"employee": employee, "cart_id": cart["uuid"]}
             return api_response(f"{employee['name']} {employee['surname']} ({employee['position']}) logged in successfully. Assigned to Cart {cart['uuid']}", 200, body={"position": employee["position"]})
         else:
@@ -65,8 +94,18 @@ def handle_authenticate():
 
     elif action == "logout":
         if rfid in active_sessions:
+
             cart_id = active_sessions[rfid]["cart_id"]
-            carts_table.update({"assigned_to": None}, Query().id == cart_id)
+
+            cart = carts_table.get(Query().uuid == cart_id)
+
+            lost_mops = cart['clean_cloths'] - cart['dirty_cloths']
+
+            if lost_mops > 0:
+                lost_mops_table.insert({"cart": cart_id, "employee": employee['rfid'], "lost_mops": lost_mops})
+                print(f"{employee['name']} {employee['surname']} lost {lost_mops} mops")
+
+            carts_table.update({"assigned_to": None}, Query().uuid == cart_id)
             del active_sessions[rfid]
 
             return api_response(f"{employee['name']} {employee['surname']} ({employee['position']}) logged out successfully. Cart {cart_id} is now available", 200, body={"position": employee["position"]})

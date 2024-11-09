@@ -3,120 +3,40 @@
     "building": "A",
     "floor": 1,
     "room": 101,
-    "uuid": "210cca5b-4c8f-4ccd-ae5f-b1aa5722fbc5"
+    "uuid": "210cca5b-4c8f-4ccd-ae5f-b1aa5722fbc5",
+    "clean_cloths": 0,
+    "dirty_cloths": 0
   },
   {
     "building": "A",
     "floor": 1,
     "room": 102,
-    "uuid": "fb53ab40-f098-4498-aa04-5c292a6a9679"
+    "uuid": "fb53ab40-f098-4498-aa04-5c292a6a9679",
+    "clean_cloths": 20,
+    "dirty_cloths": 0
   },
   {
     "building": "A",
     "floor": 2,
     "room": 201,
-    "uuid": "4e105d3d-4734-4858-addc-085fae4e0a70"
+    "uuid": "4e105d3d-4734-4858-addc-085fae4e0a70",
+    "clean_cloths": 0,
+    "dirty_cloths": 0
   },
   {
     "building": "A",
     "floor": 2,
     "room": 202,
-    "uuid": "b095bbb5-8dca-403c-8cff-fc0dfef509fa"
+    "uuid": "b095bbb5-8dca-403c-8cff-fc0dfef509fa",
+    "clean_cloths": 0,
+    "dirty_cloths": 0
   },
   {
     "building": "B",
     "floor": 1,
     "room": 101,
-    "uuid": "40ed11b2-fdc9-45a8-9dd3-7bcaa4855cda"
-  },
-  {
-    "building": "B",
-    "floor": 1,
-    "room": 102,
-    "uuid": "89651db1-dd9f-40eb-9e18-4ab0422c7d31"
-  },
-  {
-    "building": "B",
-    "floor": 2,
-    "room": 201,
-    "uuid": "c8e6b0bc-c311-46bb-af1c-273a6734e52e"
-  },
-  {
-    "building": "B",
-    "floor": 2,
-    "room": 202,
-    "uuid": "bd5e08f8-94ef-4e56-bdbd-9bfba616b090"
-  },
-  {
-    "building": "C",
-    "floor": 1,
-    "room": 101,
-    "uuid": "7e2b6f9c-52bf-4fee-92f2-21a1fddb97dd"
-  },
-  {
-    "building": "C",
-    "floor": 1,
-    "room": 102,
-    "uuid": "14bb5080-f817-42bf-943c-35465343cd94"
-  },
-  {
-    "building": "C",
-    "floor": 2,
-    "room": 201,
-    "uuid": "d86a8a5a-9898-40bd-abf1-f3fb070ce071"
-  },
-  {
-    "building": "C",
-    "floor": 2,
-    "room": 202,
-    "uuid": "1f58411f-0dcf-4359-a1a6-e70fab88f07d"
-  },
-  {
-    "building": "D",
-    "floor": 1,
-    "room": 101,
-    "uuid": "31abe1ec-4eb3-4c66-ab7d-2ec158b7143c"
-  },
-  {
-    "building": "D",
-    "floor": 1,
-    "room": 102,
-    "uuid": "30dad626-d0d2-4d3b-baf1-6a6b0e371512"
-  },
-  {
-    "building": "D",
-    "floor": 2,
-    "room": 201,
-    "uuid": "287d8ec5-40de-4ee5-bc80-82e13fa48afd"
-  },
-  {
-    "building": "D",
-    "floor": 2,
-    "room": 202,
-    "uuid": "e16d5ac3-0cd6-4956-ad12-0e30c6658030"
-  },
-  {
-    "building": "E",
-    "floor": 1,
-    "room": 101,
-    "uuid": "7bb7a2a9-e673-4786-a3d5-a8b2b0545b85"
-  },
-  {
-    "building": "E",
-    "floor": 1,
-    "room": 102,
-    "uuid": "7149547e-7ae8-4d0c-8425-c6b43b93df50"
-  },
-  {
-    "building": "E",
-    "floor": 2,
-    "room": 201,
-    "uuid": "d6682f90-e2e5-45c9-a6b3-083f468e5e2e"
-  },
-  {
-    "building": "E",
-    "floor": 2,
-    "room": 202,
-    "uuid": "b7748293-d243-4a14-9f20-2b0ff55843e0"
+    "uuid": "40ed11b2-fdc9-45a8-9dd3-7bcaa4855cda",
+    "clean_cloths": 0,
+    "dirty_cloths": 0
   }
 ]
