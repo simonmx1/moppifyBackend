@@ -1,12 +1,13 @@
 import json
-import os
-import time
+import os#
 
 from flask import Flask, jsonify, request, Response
+from flask_cors import CORS
 from tinydb import TinyDB, Query
 
 app = Flask(__name__)
 
+import time
 db = TinyDB('database.json')
 carts_table = db.table('carts')
 employees_table = db.table('employees')
@@ -33,6 +34,12 @@ def get_employees():
 def get_carts():
     carts = carts_table.all()
     return jsonify({"carts": carts}), 200
+
+
+@app.route('/lost_mops', methods=['GET'])
+def get_lost_table():
+    lost_mops = lost_mops_table.all()
+    return jsonify({"lost_mops": lost_mops}), 200
 
 @app.route('/sensor', methods=['POST'])
 def handle_sensor():
@@ -129,6 +136,7 @@ def main():
         carts_table.insert_multiple(carts)
 
     app.run(host="0.0.0.0", debug=True)
+    CORS(app, origins=["0.0.0.0"])
 
 if __name__ == '__main__':
     main()
