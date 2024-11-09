@@ -4,7 +4,7 @@
     "floor": 1,
     "room": 101,
     "uuid": "210cca5b-4c8f-4ccd-ae5f-b1aa5722fbc5",
-    "clean_cloths": 0,
+    "clean_cloths": 5,
     "dirty_cloths": 0
   },
   {
@@ -20,7 +20,7 @@
     "floor": 2,
     "room": 201,
     "uuid": "4e105d3d-4734-4858-addc-085fae4e0a70",
-    "clean_cloths": 0,
+    "clean_cloths": 2,
     "dirty_cloths": 0
   },
   {
@@ -28,7 +28,7 @@
     "floor": 2,
     "room": 202,
     "uuid": "b095bbb5-8dca-403c-8cff-fc0dfef509fa",
-    "clean_cloths": 0,
+    "clean_cloths": 1,
     "dirty_cloths": 0
   },
   {
