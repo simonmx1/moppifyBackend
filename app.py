@@ -1,5 +1,5 @@
 import json
-import os#
+import os
 
 from flask import Flask, jsonify, request, Response
 from flask_cors import CORS
@@ -28,17 +28,20 @@ def api_response(message: str, code: int, body: dict = {}) -> tuple[Response, in
 @app.route('/employees', methods=['GET'])
 def get_employees():
     employees = employees_table.all()
+    print(employees)
     return jsonify({"employees": employees}), 200
 
 @app.route('/carts', methods=['GET'])
 def get_carts():
     carts = carts_table.all()
+    print(carts)
     return jsonify({"carts": carts}), 200
 
 
 @app.route('/lost_mops', methods=['GET'])
 def get_lost_table():
     lost_mops = lost_mops_table.all()
+    print(lost_mops)
     return jsonify({"lost_mops": lost_mops}), 200
 
 @app.route('/sensor', methods=['POST'])
@@ -136,7 +139,8 @@ def main():
         carts_table.insert_multiple(carts)
 
     app.run(host="0.0.0.0", debug=True)
-    CORS(app, origins=["0.0.0.0"])
+    CORS(app, origins=["http://localhost:5173"])
+
 
 if __name__ == '__main__':
     main()
