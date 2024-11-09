@@ -1,8 +1,8 @@
 [
-  {"name": "Mike", "surname": "Oxlong", "position": "janitor", "rfid": "73e5d593"},
-  {"name": "Jack", "surname":  "Hoff", "position": "janitor", "rfid": "b0a42d19"},
-  {"name": "Hugh", "surname": "Jazz", "position": "janitor", "rfid": "74a70504"},
-  {"name": "Mike", "surname": "Rotch", "position": "janitor", "rfid": "93b3b002"},
-  {"name": "Kenshin", "surname": "Wayne", "position": "janitor", "rfid": "d1150604"},
-  {"name": "Ben", "surname": "Jahova", "position": "mike", "rfid": "ea502703"}
+  {"name": "Jack", "surname": "Oxlong", "position": "janitor", "rfid": "73e5d593"},
+  {"name": "Mikew", "surname":  "Hoff", "position": "janitor", "rfid": "b0a42d19"},
+  {"name": "Juan", "surname": "Jazz", "position": "janitor", "rfid": "74a70504"},
+  {"name": "Hugh", "surname": "Juan", "position": "janitor", "rfid": "93b3b002"},
+  {"name": "Ann", "surname": "Other Uan", "position": "janitor", "rfid": "d1150604"},
+  {"name": "Kenshin", "surname": "Kenshin", "position": "mike", "rfid": "ea502703"}
 ]

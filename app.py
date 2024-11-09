@@ -132,11 +132,14 @@ def main():
     data_path = "./data"
     employees = load_json_data(os.path.join(data_path, 'employees.json'))
     carts = load_json_data(os.path.join(data_path, 'carts.json'))
+    lost_mops = load_json_data(os.path.join(data_path, 'lost_mops.json'))
 
     if len(employees_table) == 0:
         employees_table.insert_multiple(employees)
     if len(carts_table) == 0:
         carts_table.insert_multiple(carts)
+    if len(lost_mops_table) == 0:
+        lost_mops_table.insert_multiple(lost_mops)
 
     app.run(host="0.0.0.0", debug=True)
     CORS(app, origins=["http://localhost:5173"])
